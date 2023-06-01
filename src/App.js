@@ -1,24 +1,57 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React, { useEffect, useState } from "react";
+import useLongPress from "./useLongPress";
 
-function App() {
+const Grid = {
+  A: { rowStart: 1, colStart: 1, rowEnd: 2, colEnd: 2 },
+  B: { rowStart: 1, colStart: 2, rowEnd: 2, colEnd: 3 },
+};
+
+function App(props) {
+  const { item, handlers } = useLongPress();
+  const { gridDrag, setGridDrag } = useState();
+  const { gridDrop, setGridDrop } = useState(null);
+  const [dimensions, setDimensions] = React.useState({
+    width: window.innerWidth / 4,
+    height: window.innerHeight / 4,
+  });
+
+  React.useEffect(() => {
+    function handleResize() {
+      setDimensions({
+        width: window.innerWidth / 4,
+        height: window.innerHeight / 4,
+      });
+    }
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  });
+
+  console.log(item, gridDrag);
+  console.log(dimensions);
+
+  useEffect(() => {
+    if (item) {
+      console.log(item.clientX, item.clientY);
+
+      if (
+        item?.clientX > 0 &&
+        item?.clientX < dimensions?.width &&
+        item?.clientY > 0 &&
+        item?.clientY < dimensions?.height
+      )
+        setGridDrag("A");
+    }
+  }, [dimensions, item]);
+
+  const handleMouseMove = (e) => {};
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div className="App" {...handlers} onMouseMove={handleMouseMove}></div>
   );
 }
 
