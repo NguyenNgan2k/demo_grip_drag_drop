@@ -5,6 +5,8 @@
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   grid-template-rows: repeat(4, minmax(0, 1fr));
+  color: aliceblue;
+  text-align: center;
 
 }
 
@@ -27,4 +29,12 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.drag {
+  border: 2px solid red;
+}
+
+.drop {
+  border: 2px solid #c9d2e5;
 }

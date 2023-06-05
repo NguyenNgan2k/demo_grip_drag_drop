@@ -30,6 +30,7 @@ export default function useLongPress() {
 
   function handleOnMouseUp() {
     clearTimeout(timerRef.current);
+    setAction("mouseup");
   }
 
   function handleOnTouchStart(e) {
