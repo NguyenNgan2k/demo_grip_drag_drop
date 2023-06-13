@@ -13,19 +13,16 @@
   }
 }
 
-.App {
+/* .App {
   position: relative;
-}
+} */
 
 .grip-1 {
   background-color: #282c34;
   min-height: 100vh;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  grid-template-rows: repeat(4, minmax(0, 1fr));
   color: aliceblue;
-  position: relative;
   width: 100%;
+ position: relative;;
 }
 
 .grip-2 {
@@ -57,6 +54,7 @@
   align-items: center;
   background-color: #c9d2e5;
   border-radius: 1rem;
+  position:absolute;
 }
 
 .avatar {
