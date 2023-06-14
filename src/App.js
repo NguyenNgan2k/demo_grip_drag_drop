@@ -95,6 +95,7 @@ function App(props) {
 
   const handleMouseUp = (e) => {
     if (!gridDrag) return;
+    console.log(gridDrag);
     for (let i = 0; i < 4; i++) {
       if (
         e?.clientX > dimensions?.width * i &&
@@ -138,6 +139,8 @@ function App(props) {
     setGridDrag("");
   };
 
+  console.log("gridDrag", gridDrag);
+
   return (
     <div className="App">
       <div className="grip-1">
@@ -160,98 +163,64 @@ function App(props) {
       {gridDrag && (
         <div className="grip-2" onMouseMove={handleMouseMove}>
           <div
-            className={
-              gridDrag === "A" ? "drag" : "" + gridDrop === "A" ? " drop" : ""
-            }
+            className={gridDrop === "A" ? " drop" : ""}
             onMouseUp={handleMouseUp}
           ></div>
           <div
-            className={
-              gridDrag === "B" ? "drag" : gridDrop === "B" ? "drop" : ""
-            }
+            className={gridDrop === "B" ? "drop" : ""}
             onMouseUp={handleMouseUp}
           ></div>
           <div
-            className={
-              gridDrag === "C" ? "drag" : gridDrop === "C" ? "drop" : ""
-            }
+            className={gridDrop === "C" ? "drop" : ""}
             onMouseUp={handleMouseUp}
           ></div>
           <div
-            className={
-              gridDrag === "D" ? "drag" : gridDrop === "D" ? "drop" : ""
-            }
+            className={gridDrop === "D" ? "drop" : ""}
             onMouseUp={handleMouseUp}
           ></div>
           <div
-            className={
-              gridDrag === "E" ? "drag" : gridDrop === "E" ? "drop" : ""
-            }
+            className={gridDrop === "E" ? "drop" : ""}
             onMouseUp={handleMouseUp}
           ></div>
           <div
-            className={
-              gridDrag === "F" ? "drag" : gridDrop === "F" ? "drop" : ""
-            }
+            className={gridDrop === "F" ? "drop" : ""}
+            onMouseUp={handleMouseUp}
+          ></div>
+          <div className={gridDrop === "G" ? "drop" : ""}></div>
+          <div
+            className={gridDrop === "H" ? "drop" : ""}
             onMouseUp={handleMouseUp}
           ></div>
           <div
-            className={
-              gridDrag === "G" ? "drag" : gridDrop === "G" ? "drop" : ""
-            }
-          ></div>
-          <div
-            className={
-              gridDrag === "H" ? "drag" : gridDrop === "H" ? "drop" : ""
-            }
+            className={gridDrop === "I" ? "drop" : ""}
             onMouseUp={handleMouseUp}
           ></div>
           <div
-            className={
-              gridDrag === "I" ? "drag" : gridDrop === "I" ? "drop" : ""
-            }
+            className={gridDrop === "J" ? "drop" : ""}
             onMouseUp={handleMouseUp}
           ></div>
           <div
-            className={
-              gridDrag === "J" ? "drag" : gridDrop === "J" ? "drop" : ""
-            }
+            className={gridDrop === "K" ? "drop" : ""}
             onMouseUp={handleMouseUp}
           ></div>
           <div
-            className={
-              gridDrag === "K" ? "drag" : gridDrop === "K" ? "drop" : ""
-            }
+            className={gridDrop === "L" ? "drop" : ""}
             onMouseUp={handleMouseUp}
           ></div>
           <div
-            className={
-              gridDrag === "L" ? "drag" : gridDrop === "L" ? "drop" : ""
-            }
+            className={gridDrop === "M" ? "drop" : ""}
             onMouseUp={handleMouseUp}
           ></div>
           <div
-            className={
-              gridDrag === "M" ? "drag" : gridDrop === "M" ? "drop" : ""
-            }
+            className={gridDrop === "N" ? "drop" : ""}
             onMouseUp={handleMouseUp}
           ></div>
           <div
-            className={
-              gridDrag === "N" ? "drag" : gridDrop === "N" ? "drop" : ""
-            }
+            className={gridDrop === "O" ? "drop" : ""}
             onMouseUp={handleMouseUp}
           ></div>
           <div
-            className={
-              gridDrag === "O" ? "drag" : gridDrop === "O" ? "drop" : ""
-            }
-            onMouseUp={handleMouseUp}
-          ></div>
-          <div
-            className={
-              gridDrag === "P" ? "drag" : gridDrop === "P" ? "drop" : ""
-            }
+            className={gridDrop === "P" ? "drop" : ""}
             onMouseUp={handleMouseUp}
           ></div>
         </div>

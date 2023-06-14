@@ -73,3 +73,7 @@
   color: burlywood;
   font-weight: bold;
 }
+
+.active :hover {
+  border: 2px solid #c9d2e5;
+}
